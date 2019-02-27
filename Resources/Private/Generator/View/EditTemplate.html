@@ -1,18 +1,15 @@
 {namespace k=Codeminds\Kickstarter\ViewHelpers}<![CDATA[<f:layout name="Default" />
 
-<f:section name="Title">]]>Edit {modelName -> k:inflect.humanizeCamelCase(lowercase: true)} "<![CDATA[{]]>{modelName}<![CDATA[.name}]]>"<![CDATA[</f:section>
+<f:section name="Title">]]><![CDATA[{]]>{modelName}<![CDATA[.name}]]> bearbeiten<![CDATA[</f:section>
 
 <f:section name="Content">]]>
     <![CDATA[<f:form action="update" object="{]]>{modelName}<![CDATA[}]]>" objectName="{modelName}">
-        <ol><f:for each="{properties}" as="property" key="propertyName">
-            <li>
+        <f:for each="{properties}" as="property" key="propertyName">
+            <div class="form-group">
                 <label for="{propertyName}">{propertyName -> k:inflect.humanizeCamelCase()}</label>
-                <f:if condition="{0: property.type} == {0: 'DateTime'}"><f:then><![CDATA[<f:form.textfield]]> type="datetime" value="<![CDATA[{]]>{modelName}.{propertyName}<![CDATA[ -> f:format.date(format: 'Y-m-d\TH:i:sP')}]]>" property="{propertyName}" id="{propertyName}" /></f:then><f:else><![CDATA[<f:form.textfield]]> property="{propertyName}" id="{propertyName}" /></f:else></f:if>
-            </li>
+                <f:if condition="{0: property.type} == {0: 'DateTime'}"><f:then><![CDATA[<f:form.textfield]]> type="datetime" value="<![CDATA[{f:format.date(date: 'now', format: 'Y-m-d\TH:i:sP')}]]>" property="{propertyName}" id="{propertyName}" class="form-control" /></f:then><f:else><![CDATA[<f:form.textfield]]> property="{propertyName}" id="{propertyName}" class="form-control" /></f:else></f:if>
+            </div>
         </f:for>
-            <li>
-                <![CDATA[<f:form.submit value="Update" />
-            </li>
-        </ol>
+        <![CDATA[<button type="submit" class="btn btn-primary">Speichern</button>
     </f:form>]]>
 <![CDATA[</f:section>]]>
