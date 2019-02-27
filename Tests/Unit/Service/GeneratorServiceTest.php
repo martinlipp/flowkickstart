@@ -1,8 +1,8 @@
 <?php
-namespace Neos\Kickstarter\Tests\Unit\Service;
+namespace Codeminds\Kickstarter\Tests\Unit\Service;
 
 /*
- * This file is part of the Neos.Kickstarter package.
+ * This file is part of the Codeminds.Kickstarter package.
  *
  * (c) Contributors of the Neos Project - www.neos.io
  *
@@ -22,7 +22,7 @@ class GeneratorServiceTest extends \Neos\Flow\Tests\UnitTestCase
      */
     public function normalizeFieldDefinitionsConvertsBoolTypeToBoolean()
     {
-        $service = $this->getAccessibleMock(\Neos\Kickstarter\Service\GeneratorService::class, array('dummy'));
+        $service = $this->getAccessibleMock(\Codeminds\Kickstarter\Service\GeneratorService::class, array('dummy'));
         $fieldDefinitions = array(
             'field' => array(
                 'type' => 'bool'
@@ -37,7 +37,7 @@ class GeneratorServiceTest extends \Neos\Flow\Tests\UnitTestCase
      */
     public function normalizeFieldDefinitionsPrefixesGlobalClassesWithBackslash()
     {
-        $service = $this->getAccessibleMock(\Neos\Kickstarter\Service\GeneratorService::class, array('dummy'));
+        $service = $this->getAccessibleMock(\Codeminds\Kickstarter\Service\GeneratorService::class, array('dummy'));
         $fieldDefinitions = array(
             'field' => array(
                 'type' => 'DateTime'
@@ -53,7 +53,7 @@ class GeneratorServiceTest extends \Neos\Flow\Tests\UnitTestCase
     public function normalizeFieldDefinitionsPrefixesLocalTypesWithNamespaceIfNeeded()
     {
         $uniqueClassName = uniqid('Class');
-        $service = $this->getAccessibleMock(\Neos\Kickstarter\Service\GeneratorService::class, array('dummy'));
+        $service = $this->getAccessibleMock(\Codeminds\Kickstarter\Service\GeneratorService::class, array('dummy'));
         $fieldDefinitions = array(
             'field' => array(
                 'type' => $uniqueClassName

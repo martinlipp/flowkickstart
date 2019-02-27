@@ -1,8 +1,8 @@
 <?php
-namespace Neos\Kickstarter\ViewHelpers\Format;
+namespace Codeminds\Kickstarter\ViewHelpers\Format;
 
 /*
- * This file is part of the Neos.Kickstarter package.
+ * This file is part of the Codeminds.Kickstarter package.
  *
  * (c) Contributors of the Neos Project - www.neos.io
  *

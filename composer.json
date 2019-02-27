@@ -1,7 +1,7 @@
 {
-    "name": "neos/kickstarter",
-    "type": "neos-framework",
-    "description": "A simple generator for controller and views.",
+    "name": "codeminds/kickstarter",
+    "type": "neos-package",
+    "description": "A simple generator for controller and views using Bootstrap.",
     "license": "MIT",
     "require": {
         "neos/flow": "*",
@@ -10,20 +10,17 @@
     },
     "autoload": {
         "psr-4": {
-            "Neos\\Kickstarter\\": "Classes"
+            "Codeminds\\Kickstarter\\": "Classes"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Neos\\Kickstarter\\Tests\\": "Tests"
+            "Codeminds\\Kickstarter\\Tests\\": "Tests"
         }
-    },
-    "replace": {
-        "typo3/kickstart": "self.version"
     },
     "extra": {
         "neos": {
-            "package-key": "Neos.Kickstarter"
+            "package-key": "Codeminds.Kickstarter"
         }
     }
 }

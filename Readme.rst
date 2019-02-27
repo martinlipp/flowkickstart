@@ -1,5 +1,5 @@
 ----------------
-Neos Kickstarter
+Codeminds.Kickstarter
 ----------------
 
 .. note:: This repository is a **read-only subsplit** of a package that is part of the

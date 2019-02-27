@@ -1,8 +1,8 @@
 <?php
-namespace Neos\Kickstarter\Service;
+namespace Codeminds\Kickstarter\Service;
 
 /*
- * This file is part of the Neos.Kickstarter package.
+ * This file is part of the Codeminds.Kickstarter package.
  *
  * (c) Contributors of the Neos Project - www.neos.io
  *
@@ -39,7 +39,7 @@ class GeneratorService
     protected $packageManager;
 
     /**
-     * @var \Neos\Kickstarter\Utility\Inflector
+     * @var \Codeminds\Kickstarter\Utility\Inflector
      * @Flow\Inject
      */
     protected $inflector;
@@ -70,7 +70,7 @@ class GeneratorService
         $controllerName = ucfirst($controllerName);
         $controllerClassName = $controllerName . 'Controller';
 
-        $templatePathAndFilename = 'resource://Neos.Kickstarter/Private/Generator/Controller/ActionControllerTemplate.php.tmpl';
+        $templatePathAndFilename = 'resource://Codeminds.Kickstarter/Private/Generator/Controller/ActionControllerTemplate.php.tmpl';
 
         $contextVariables = [];
         $contextVariables['packageKey'] = $packageKey;
@@ -107,7 +107,7 @@ class GeneratorService
         $controllerName = ucfirst($controllerName);
         $controllerClassName = $controllerName . 'Controller';
 
-        $templatePathAndFilename = 'resource://Neos.Kickstarter/Private/Generator/Controller/CrudControllerTemplate.php.tmpl';
+        $templatePathAndFilename = 'resource://Codeminds.Kickstarter/Private/Generator/Controller/CrudControllerTemplate.php.tmpl';
 
         $contextVariables = [];
         $contextVariables['packageKey'] = $packageKey;
@@ -147,7 +147,7 @@ class GeneratorService
         $controllerName = ucfirst($controllerName) . 'Command';
         $controllerClassName = $controllerName . 'Controller';
 
-        $templatePathAndFilename = 'resource://Neos.Kickstarter/Private/Generator/Controller/CommandControllerTemplate.php.tmpl';
+        $templatePathAndFilename = 'resource://Codeminds.Kickstarter/Private/Generator/Controller/CommandControllerTemplate.php.tmpl';
 
         $contextVariables = [];
         $contextVariables['packageKey'] = $packageKey;
@@ -182,7 +182,7 @@ class GeneratorService
         list($baseNamespace) = $this->getPrimaryNamespaceAndEntryPath($this->packageManager->getPackage($packageKey));
         $viewName = ucfirst($viewName);
 
-        $templatePathAndFilename = 'resource://Neos.Kickstarter/Private/Generator/View/' . $templateName . 'Template.html';
+        $templatePathAndFilename = 'resource://Codeminds.Kickstarter/Private/Generator/View/' . $templateName . 'Template.html';
 
         $contextVariables = [];
         $contextVariables['packageKey'] = $packageKey;
@@ -231,7 +231,7 @@ class GeneratorService
     {
         $layoutName = ucfirst($layoutName);
 
-        $templatePathAndFilename = 'resource://Neos.Kickstarter/Private/Generator/View/' . $layoutName . 'Layout.html';
+        $templatePathAndFilename = 'resource://Codeminds.Kickstarter/Private/Generator/View/' . $layoutName . 'Layout.html';
 
         $contextVariables = [];
         $contextVariables['packageKey'] = $packageKey;
@@ -263,7 +263,7 @@ class GeneratorService
         $namespace = trim($baseNamespace, '\\') . '\\Domain\\Model';
         $fieldDefinitions = $this->normalizeFieldDefinitions($fieldDefinitions, $namespace);
 
-        $templatePathAndFilename = 'resource://Neos.Kickstarter/Private/Generator/Model/EntityTemplate.php.tmpl';
+        $templatePathAndFilename = 'resource://Codeminds.Kickstarter/Private/Generator/Model/EntityTemplate.php.tmpl';
 
         $contextVariables = [];
         $contextVariables['packageKey'] = $packageKey;
@@ -298,7 +298,7 @@ class GeneratorService
         $testName = ucfirst($modelName) . 'Test';
         $namespace = trim($baseNamespace, '\\') . '\\Tests\\Unit\\Domain\\Model';
 
-        $templatePathAndFilename = 'resource://Neos.Kickstarter/Private/Generator/Tests/Unit/Model/EntityTestTemplate.php.tmpl';
+        $templatePathAndFilename = 'resource://Codeminds.Kickstarter/Private/Generator/Tests/Unit/Model/EntityTestTemplate.php.tmpl';
 
         $contextVariables = [];
         $contextVariables['packageKey'] = $packageKey;
@@ -332,7 +332,7 @@ class GeneratorService
         $repositoryClassName = $modelName . 'Repository';
         $namespace = trim($baseNamespace, '\\') . '\\Domain\\Repository';
 
-        $templatePathAndFilename = 'resource://Neos.Kickstarter/Private/Generator/Repository/RepositoryTemplate.php.tmpl';
+        $templatePathAndFilename = 'resource://Codeminds.Kickstarter/Private/Generator/Repository/RepositoryTemplate.php.tmpl';
 
         $contextVariables = [];
         $contextVariables['packageKey'] = $packageKey;
@@ -363,17 +363,17 @@ class GeneratorService
         $contextVariables = [];
         $contextVariables['packageKey'] = $packageKey;
 
-        $templatePathAndFilename = 'resource://Neos.Kickstarter/Private/Generator/Documentation/conf.py';
+        $templatePathAndFilename = 'resource://Codeminds.Kickstarter/Private/Generator/Documentation/conf.py';
         $fileContent = $this->renderTemplate($templatePathAndFilename, $contextVariables);
         $targetPathAndFilename = $documentationPath . '/conf.py';
         $this->generateFile($targetPathAndFilename, $fileContent);
 
-        $templatePathAndFilename = 'resource://Neos.Kickstarter/Private/Generator/Documentation/Makefile';
+        $templatePathAndFilename = 'resource://Codeminds.Kickstarter/Private/Generator/Documentation/Makefile';
         $fileContent = file_get_contents($templatePathAndFilename);
         $targetPathAndFilename = $documentationPath . '/Makefile';
         $this->generateFile($targetPathAndFilename, $fileContent);
 
-        $templatePathAndFilename = 'resource://Neos.Kickstarter/Private/Generator/Documentation/index.rst';
+        $templatePathAndFilename = 'resource://Codeminds.Kickstarter/Private/Generator/Documentation/index.rst';
         $fileContent = $this->renderTemplate($templatePathAndFilename, $contextVariables);
         $targetPathAndFilename = $documentationPath . '/index.rst';
         $this->generateFile($targetPathAndFilename, $fileContent);
@@ -403,7 +403,7 @@ class GeneratorService
         $contextVariables['packageKey'] = $packageKey;
         $contextVariables['sourceLanguageKey'] = $sourceLanguageKey;
 
-        $templatePathAndFilename = 'resource://Neos.Kickstarter/Private/Generator/Translations/SourceLanguageTemplate.xlf.tmpl';
+        $templatePathAndFilename = 'resource://Codeminds.Kickstarter/Private/Generator/Translations/SourceLanguageTemplate.xlf.tmpl';
         $fileContent = $this->renderTemplate($templatePathAndFilename, $contextVariables);
         $sourceLanguageFile = Files::concatenatePaths([$translationPath, $sourceLanguageKey, 'Main.xlf']);
         $this->generateFile($sourceLanguageFile, $fileContent);
@@ -415,7 +415,7 @@ class GeneratorService
                 $contextVariables['targetLanguageKey'] = $targetLanguageKey;
                 $contextVariables['translationUnits'] = $parsedXliffArray['translationUnits'];
 
-                $templatePathAndFilename = 'resource://Neos.Kickstarter/Private/Generator/Translations/TargetLanguageTemplate.xlf.tmpl';
+                $templatePathAndFilename = 'resource://Codeminds.Kickstarter/Private/Generator/Translations/TargetLanguageTemplate.xlf.tmpl';
                 $fileContent = $this->renderTemplate($templatePathAndFilename, $contextVariables);
                 $targetPathAndFilename = Files::concatenatePaths([$translationPath, $targetLanguageKey, 'Main.xlf']);
                 $this->generateFile($targetPathAndFilename, $fileContent);

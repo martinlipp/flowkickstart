@@ -1,8 +1,8 @@
 <?php
-namespace Neos\Kickstarter\Utility;
+namespace Codeminds\Kickstarter\Utility;
 
 /*
- * This file is part of the Neos.Kickstarter package.
+ * This file is part of the Codeminds.Kickstarter package.
  *
  * (c) Contributors of the Neos Project - www.neos.io
  *

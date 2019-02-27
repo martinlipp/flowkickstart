@@ -1,8 +1,8 @@
 <?php
-namespace Neos\Kickstarter\ViewHelpers\Inflect;
+namespace Codeminds\Kickstarter\ViewHelpers\Inflect;
 
 /*
- * This file is part of the Neos.Kickstarter package.
+ * This file is part of the Codeminds.Kickstarter package.
  *
  * (c) Contributors of the Neos Project - www.neos.io
  *
@@ -29,7 +29,7 @@ use Neos\Flow\Annotations as Flow;
 class HumanizeCamelCaseViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper
 {
     /**
-     * @var \Neos\Kickstarter\Utility\Inflector
+     * @var \Codeminds\Kickstarter\Utility\Inflector
      * @Flow\Inject
      */
     protected $inflector;
